@@ -18,7 +18,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
                 Map<String,Object> model=new HashMap<String, Object>();
                 String user = request.queryParams("user");
                 model.put("user", user);
-                return new ModelAndView(model, buildSquad.hbs);
+                return new ModelAndView(model, "buildSquad.hbs");
             }, new HandlebarsTemplateEngine());
 
 
