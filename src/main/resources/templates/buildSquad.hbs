@@ -1,2 +1,13 @@
 <h3>Corporal {{user}} Is On Duty</h3>
 <h3>Build Your Section</h3>
+<form action="/build_squad" method="post">
+    <div class="form-group">
+        <p>Bren</p>
+        <button type="submit" name="Bren" class="btn btn-lg btn-secondary" action="/build_squad" method="post">Select Kit</button>
+    </div>
+</form>
+
+{{#each userSection}}
+    {{this}}
+{{/each}}
+

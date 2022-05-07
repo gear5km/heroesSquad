@@ -1,5 +1,7 @@
 import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class section {
-    kits [] Members = new kits[1];
+    List<soldier> members = new ArrayList<soldier>();
 }
