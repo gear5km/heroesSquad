@@ -1,13 +1,86 @@
-<h3>Corporal {{user}} Is On Duty</h3>
-<h3>Build Your Section</h3>
-<form action="/build_squad" method="post">
-    <div class="form-group">
-        <p>Bren</p>
-        <button type="submit" name="Bren" class="btn btn-lg btn-secondary" action="/build_squad" method="post">Select Kit</button>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Cover Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="css/buildSquad.css" rel="stylesheet">
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">Heroes of the Second World War</h3>
+                    <nav class="nav nav-masthead">
+                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link active" href="#">Squad Setup</a>
+                        <a class="nav-link" href="#">Deploy</a>
+                    </nav>
+                </div>
+                <br>
+                <br>
+            </div>
+            <br>
+            <h5 style="width:300px; position:fixed; left:5%; top:1%">Corporal {{user}} is On duty</h5>
+            <br>
+            <h3 style="width:300px; position:fixed; left:5%">Select Your Troops</h3>
+            <img src="images/sectionLogo.png" style="width:200px; position:fixed; left:8%; top:15%">
+            <div class="container-fluid" style="position:fixed; left:30%; top:35%;">
+                <h5>Your Section Composition:</h5>
+                {{#each userSection}}
+                    {{this}}
+                    <p>Health: {{userSectionHealth}}</p>
+                {{/each}}
+            </div>
+            <div class="row" style="position:relative; margin-top:20%">
+                <div class="col-md-11">
+                    <h3>Bren Gunner</h3>
+                    <img src="images/brenVectorWhite.svg"  width="700" height="400" alt=""/>
+                    <p>Bren Mk.3</p>
+                    <p>{{health}}</p>
+                    <p>{{skill}}</p>
+                    <form action="/build_squad" method="post">
+                        <button type="submit" class="btn btn-lg btn-secondary"  action="/build_squad" method="post">Select</button>
+                    </form>
+                    <br>
+                    <br>
+                </div>
+                <div class="col-md-11">
+                    <h3>Thompson Gunner</h3>
+                    <img src="images/tommyVectorWhite.svg" width="700" height="400" alt=""/>
+                    <p>M1A1 Thompson SMG</p>
+                    <p>{{health}}</p>
+                    <p>{{skill}}</p>
+                    <button class="btn btn-lg btn-secondary">Select</button>
+                    <br>
+                    <br>
+                </div>
+                <div class="col-md-11">
+                    <h3>Rifleman</h3>
+                    <img src="images/no4AltWhite.svg" width="700" height="400" alt=""/>
+                    <p>No.4 Mk.1 Lee Enfield</p>
+                    <p>{{health}}</p>
+                    <p>{{skill}}</p>
+                    <button class="btn btn-lg btn-secondary">Select</button>
+                    <br>
+                    <br>
+                </div>
+                <!--<a href="#" class="btn btn-lg btn-secondary">Start</a>-->
+            </div>
+        </div>
+
     </div>
-</form>
-
-{{#each userSection}}
-    {{this}}
-{{/each}}
-
+</div>
+<footer class="w-100 py-4 flex-shrink-0" style="height:200px; color:grey">
+    <p style="color:white">A Project by gear5km for Moringa School</p>
+</footer>
+</body>

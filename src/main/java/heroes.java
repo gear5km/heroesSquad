@@ -26,17 +26,17 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
              ***********************************/
             get("/build_squad", (request, response) -> {
                 Map<String,Object> model=new HashMap<String, Object>();
-                String user = request.queryParams("user");
+                String user = request.queryParams("user"); // Gets a user from the form in homepage
                 model.put("user", user);
-                model.put("user", request.session().attribute("username"));
+                //model.put("user", request.session().attribute("username"));
                 return new ModelAndView(model, "buildSquad.hbs");
             }, new HandlebarsTemplateEngine());
 
             post("/build_squad", (request, response)-> {
                 Map<String,Object> model=new HashMap<String, Object>();
-                request.session().attribute("username", user);
                 model.put("userSection", userSection.members);
                 userSection.members.add(soldier.brenGunner); // Adds a Brengunner to your Section
+                model.put("userSectionHealth", userSection.members.get(0).health);
                 return new ModelAndView(model, "buildSquad.hbs");
             }, new HandlebarsTemplateEngine());
 
