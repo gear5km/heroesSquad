@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicReference;
-
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -32,9 +31,9 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
                 return new ModelAndView(model, "buildSquad.hbs");
             }, new HandlebarsTemplateEngine());
 
-            /**
+            /************************************
              * Posts a Bren Gunner to the Section
-             */
+             ************************************/
 
             post("/build_squad", (request, response)-> {
                 Map<String,Object> model=new HashMap<String, Object>();
@@ -44,7 +43,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
                 model.put("userSectionSkill", userSection.members.get(0).skill);
                 return new ModelAndView(model, "buildSquad.hbs");
             }, new HandlebarsTemplateEngine());
-            
+
         }
     }
 
