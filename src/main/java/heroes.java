@@ -32,15 +32,19 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
                 return new ModelAndView(model, "buildSquad.hbs");
             }, new HandlebarsTemplateEngine());
 
+            /**
+             * Posts a Bren Gunner to the Section
+             */
+
             post("/build_squad", (request, response)-> {
                 Map<String,Object> model=new HashMap<String, Object>();
                 model.put("userSection", userSection.members);
                 userSection.members.add(soldier.brenGunner); // Adds a Brengunner to your Section
                 model.put("userSectionHealth", userSection.members.get(0).health);
+                model.put("userSectionSkill", userSection.members.get(0).skill);
                 return new ModelAndView(model, "buildSquad.hbs");
             }, new HandlebarsTemplateEngine());
-
-
+            
         }
     }
 
