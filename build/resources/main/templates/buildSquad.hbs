@@ -41,48 +41,73 @@
                     <p>Health: {{userSectionHealth}}</p>
                     <p>Skill: {{userSectionSkill}}</p>
                 {{/each}}
+                <form action="/deploy" method="post">
+                    <button class="btn btn-primary" >Deploy</button>
+                </form>
             </div>
             <div class="row" style="position:relative; margin-top:20%">
-                <div class="col-md-11">
-                    <h3>Bren Gunner</h3>
-                    <img src="images/brenVectorWhite.svg"  width="700" height="400" alt=""/>
-                    <p>Bren Mk.3</p>
-                    <p>{{health}}</p>
-                    <p>{{skill}}</p>
-                    <form action="/build_squad" method="post">
-                        <label for="brenSelect"> Select Bren</label><br>
-                        <input type="checkbox" id="brenSelect" name="brenSelect" value=true>
-                        <button type="submit" class="btn btn-lg btn-secondary"  action="/build_squad" method="post">Select</button>
-                    </form>
-                    <br>
-                    <br>
-                </div>
-                <div class="col-md-11">
-                    <h3>Thompson Gunner</h3>
-                    <img src="images/tommyVectorWhite.svg" width="700" height="400" alt=""/>
-                    <p>M1A1 Thompson SMG</p>
-                    <p>{{health}}</p>
-                    <p>{{skill}}</p>
-                    <form action="/build_squad" method="post">
-                        <label for="thompsonSelect"> Select Thompson</label><br>
-                        <input type="checkbox" id="thompsonSelect" name="thompsonSelect" value=true>
-                        <button type="submit" class="btn btn-lg btn-secondary"  action="/build_squad" method="post">Select</button>
-                    </form>
-                    <br>
-                    <br>
-                </div>
-                <div class="col-md-11">
-                    <h3>Rifleman</h3>
-                    <img src="images/no4AltWhite.svg" width="700" height="400" alt=""/>
-                    <p>No.4 Mk.1 Lee Enfield</p>
-                    <p>{{health}}</p>
-                    <p>{{skill}}</p>
-                    <button class="btn btn-lg btn-secondary">Select</button>
-                    <br>
-                    <br>
-                </div>
+                <form action="/build_squad" method="post">
+                    <div class="col-md-11">
+                        <h3>Bren Gunner</h3>
+                        <img src="images/brenVectorWhite.svg"  width="700" height="400" alt=""/>
+                        <p>Bren Mk.3</p>
+                        <p>{{health}}</p>
+                        <p>{{skill}}</p>
+                        <div class="form-group">
+                            <label for="setBrenName"> Set Your Bren Gunners Name</label><br>
+                            <input type="text" id="setBrenName" name="setBrenName" placeholder="Bren Gunners Name">
+                            <br>
+                            <label for="setBrenHealth"> Set Your Bren Gunners Health</label><br>
+                            <input type="text" id="setBrenHealth" name="setBrenHealth">
+                            <br>
+                            <label for="setBrenSkill"> Set Bren Gunners Skill</label><br>
+                            <input type="text" id="setBrenSkill" name="setBrenSkill">
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="col-md-11">
+                        <h3>Thompson Gunner</h3>
+                        <img src="images/tommyVectorWhite.svg" width="700" height="400" alt=""/>
+                        <p>M1A1 Thompson SMG</p>
+                        <p>{{health}}</p>
+                        <p>{{skill}}</p>
+                        <div class="form-group">
+                            <label for="setThompsonName"> Set Your Bren Gunners Name</label><br>
+                            <input type="text" id="setThompsonName" name="setThompsonName">
+                            <br>
+                            <label for="setThompsonHealth"> Set Your Bren Gunners Health</label><br>
+                            <input type="text" id="setThompsonHealth" name="setThompsonHealth">
+                            <br>
+                            <label for="setThompsonSkill"> Set Bren Gunners Skill</label><br>
+                            <input type="text" id="setThompsonSkill" name="setThompsonSkill">
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="col-md-11">
+                        <h3>Rifleman</h3>
+                        <img src="images/no4AltWhite.svg" width="700" height="400" alt=""/>
+                        <p>No.4 Mk.1 Lee Enfield</p>
+                        <p>{{health}}</p>
+                        <p>{{skill}}</p>
+                        <div class="form-group">
+                            <label for="setrifleManName"> Set Your Bren Gunners Name</label><br>
+                            <input type="text" id="setrifleManName" name="setrifleManName">
+                            <br>
+                            <label for="setrifleManHealth"> Set Your Bren Gunners Health</label><br>
+                            <input type="text" id="setrifleManHealth" name="setrifleManHealth">
+                            <br>
+                            <label for="setrifleManSkill"> Set Bren Gunners Skill</label><br>
+                            <input type="text" id="setrifleManSkill" name="setrifleManSkill">
+                        </div>
+                        <br>
+                        <br>
+                    </div>
                 <!--<a href="#" class="btn btn-lg btn-secondary">Start</a>-->
-            </div>
+                    <button type="submit" class="btn btn-lg btn-secondary"  action="/build_squad" >Select</button>
+                </form>
+            </form>
         </div>
         <button class="btn btn-primary">Deploy</button>
 
