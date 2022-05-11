@@ -11,7 +11,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
         public  static void main(String[] args){
             staticFiles.location("/public"); // Static files Directory for storing things like CSS and Images
             section userSection = new section();
-            userSection.members.add(soldier.ThompsonSMG); // Adds SMG (YOU) to section - Default- User is automatically in the Section
+            //userSection.members.add(soldier.ThompsonSMG); // Adds SMG (YOU) to section - Default- User is automatically in the Section
 
 
             /************************************
@@ -32,15 +32,30 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
             }, new HandlebarsTemplateEngine());
 
             /************************************
-             * Posts a Bren Gunner to the Section
+             * Posts  Units to the Section
              ************************************/
 
             post("/build_squad", (request, response)-> {
                 Map<String,Object> model=new HashMap<String, Object>();
                 model.put("userSection", userSection.members);
-                userSection.members.add(soldier.brenGunner); // Adds a Brengunner to your Section
-                model.put("userSectionHealth", userSection.members.get(0).health);
-                model.put("userSectionSkill", userSection.members.get(0).skill);
+
+                String brenGunnerSelected = request.queryParams("brenSelect"); //Checks if bren gunner has been selected
+                String thompsonGunnerSelected = request.queryParams("thompsonSelect"); // Checks if Thompson gunner has been selected
+                System.out.println(brenGunnerSelected);
+                System.out.println(thompsonGunnerSelected);
+
+                if (brenGunnerSelected.equals("true")) {
+                    userSection.members.add(soldier.brenGunner); // Adds a Brengunner to your Section
+                    model.put("userSectionHealth", userSection.members.get(0).health);
+                    model.put("userSectionSkill", userSection.members.get(0).skill);
+                }
+
+                else if (thompsonGunnerSelected.equals("true")){
+                    userSection.members.add(soldier.ThompsonSMG); // Adds a Thompson Gunner to your Section
+                    model.put("userSectionHealth", userSection.members.get(1).health);
+                    model.put("userSectionSkill", userSection.members.get(1).skill);
+                }
+
                 return new ModelAndView(model, "buildSquad.hbs");
             }, new HandlebarsTemplateEngine());
 

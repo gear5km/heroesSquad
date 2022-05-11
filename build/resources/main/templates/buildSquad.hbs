@@ -50,6 +50,8 @@
                     <p>{{health}}</p>
                     <p>{{skill}}</p>
                     <form action="/build_squad" method="post">
+                        <label for="brenSelect"> Select Bren</label><br>
+                        <input type="checkbox" id="brenSelect" name="brenSelect" value=true>
                         <button type="submit" class="btn btn-lg btn-secondary"  action="/build_squad" method="post">Select</button>
                     </form>
                     <br>
@@ -61,7 +63,11 @@
                     <p>M1A1 Thompson SMG</p>
                     <p>{{health}}</p>
                     <p>{{skill}}</p>
-                    <button class="btn btn-lg btn-secondary">Select</button>
+                    <form action="/build_squad" method="post">
+                        <label for="thompsonSelect"> Select Thompson</label><br>
+                        <input type="checkbox" id="thompsonSelect" name="thompsonSelect" value=true>
+                        <button type="submit" class="btn btn-lg btn-secondary"  action="/build_squad" method="post">Select</button>
+                    </form>
                     <br>
                     <br>
                 </div>
@@ -78,6 +84,7 @@
                 <!--<a href="#" class="btn btn-lg btn-secondary">Start</a>-->
             </div>
         </div>
+        <button class="btn btn-primary">Deploy</button>
 
     </div>
 </div>
