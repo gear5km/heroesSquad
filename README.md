@@ -17,7 +17,7 @@ If building locally:
 download onto local folder and open as project in intellij. 
 Compile and run. 
 
-Runs on http://localhost:4567/
+Runs on localhost:4567
 
 # Heroku live link:
 
