@@ -78,14 +78,12 @@
                         <p>ID: {{id}}</p>
                         <p>{{this.}}</p>
                         <form action="/assignFireTeam1" method="post">
-                            <button type="submit" class="btn btn-sm btn-secondary">Assign to FireTeam 1</button>
-                            <input type="checkbox" name="soldierId" value="{{id}}">
+                            <button type="submit" class="btn btn-sm btn-secondary" name="soldierId" value="{{id}}">Assign to FireTeam 1</button>
                         </form>
                         <br>
                         <br>
                         <form action="/assignFireTeam2" method="post">
-                            <button type="submit" class="btn btn-sm btn-secondary">Assign to FireTeam 2</button>
-                            <input type="checkbox" name="soldierId" value="{{id}}">
+                            <button type="submit" class="btn btn-sm btn-secondary" name="soldierId" value="{{id}}">Assign to FireTeam 2</button>
                         </form>
                     {{/each}}
                 <h5>Your Section Composition:</h5>

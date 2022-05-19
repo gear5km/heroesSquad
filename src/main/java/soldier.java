@@ -37,6 +37,7 @@ public class soldier {
         return members;
     }
 
+
     static int brenGunnerSkill = 50;
     static int brenGunnerHealth = 100;
     static int thompsonGunnerSkill =70;
