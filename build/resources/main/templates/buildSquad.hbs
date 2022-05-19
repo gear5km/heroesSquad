@@ -34,19 +34,19 @@
             <br>
             <h3 style="width:300px; position:fixed; left:5%">Select Your Troops</h3>
             <img src="images/sectionLogo.png" style="width:200px; position:fixed; left:8%; top:15%">
-            <div class="container-fluid" style="position:fixed; left:30%; top:35%;">
+            <div class="container-fluid" style="position:fixed; left:30%; top:5%;">
                 <h5>Your Section Composition:</h5>
-                {{#each userSection}}
-                    {{this}}
-                    <p>Health: {{userSectionHealth}}</p>
-                    <p>Skill: {{userSectionSkill}}</p>
+                {{#each mySectionMembers}}
+                    <p>Name: {{name}}</p>
+                    <p>Health: {{health}}</p>
+                    <p>Skill: {{skill}}</p>
                 {{/each}}
-                <form action="/deploy" method="post">
+                <form action="/deploy">
                     <button class="btn btn-primary" >Deploy</button>
                 </form>
             </div>
             <div class="row" style="position:relative; margin-top:20%">
-                <form action="/build_squad" method="post">
+                <form action="/build_squad/add" method="post">
                     <div class="col-md-11">
                         <h3>Bren Gunner</h3>
                         <img src="images/brenVectorWhite.svg"  width="700" height="400" alt=""/>
@@ -57,11 +57,6 @@
                             <label for="setBrenName"> Set Your Bren Gunners Name</label><br>
                             <input type="text" id="setBrenName" name="setBrenName" placeholder="Bren Gunners Name">
                             <br>
-                            <label for="setBrenHealth"> Set Your Bren Gunners Health</label><br>
-                            <input type="text" id="setBrenHealth" name="setBrenHealth">
-                            <br>
-                            <label for="setBrenSkill"> Set Bren Gunners Skill</label><br>
-                            <input type="text" id="setBrenSkill" name="setBrenSkill">
                         </div>
                         <br>
                         <br>
@@ -76,11 +71,6 @@
                             <label for="setThompsonName"> Set Your Bren Gunners Name</label><br>
                             <input type="text" id="setThompsonName" name="setThompsonName">
                             <br>
-                            <label for="setThompsonHealth"> Set Your Bren Gunners Health</label><br>
-                            <input type="text" id="setThompsonHealth" name="setThompsonHealth">
-                            <br>
-                            <label for="setThompsonSkill"> Set Bren Gunners Skill</label><br>
-                            <input type="text" id="setThompsonSkill" name="setThompsonSkill">
                         </div>
                         <br>
                         <br>
@@ -95,11 +85,6 @@
                             <label for="setrifleManName"> Set Your Bren Gunners Name</label><br>
                             <input type="text" id="setrifleManName" name="setrifleManName">
                             <br>
-                            <label for="setrifleManHealth"> Set Your Bren Gunners Health</label><br>
-                            <input type="text" id="setrifleManHealth" name="setrifleManHealth">
-                            <br>
-                            <label for="setrifleManSkill"> Set Bren Gunners Skill</label><br>
-                            <input type="text" id="setrifleManSkill" name="setrifleManSkill">
                         </div>
                         <br>
                         <br>
@@ -109,11 +94,11 @@
                 </form>
             </form>
         </div>
-        <button class="btn btn-primary">Deploy</button>
 
     </div>
 </div>
 <footer class="w-100 py-4 flex-shrink-0" style="height:200px; color:grey">
     <p style="color:white">A Project by gear5km for Moringa School</p>
 </footer>
+</div>
 </body>
