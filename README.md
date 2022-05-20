@@ -9,7 +9,11 @@ By K Mbatia
 
 Heroes of WW2 Game
 
-Select your section and deploy to a theatre of war
+Enter a Username for your corporal, 
+
+Add the names of your section members 
+
+Then deploy to a theatre of war
 
 # Setup instructions:
 

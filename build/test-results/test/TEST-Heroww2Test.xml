@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Heroww2Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-19T15:07:50" hostname="DESKTOP-E6NU9KJ" time="0.017">
+<testsuite name="Heroww2Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-20T11:58:43" hostname="DESKTOP-E6NU9KJ" time="0.018">
   <properties/>
-  <testcase name="checkFireTeamComposition()" classname="Heroww2Test" time="0.017"/>
+  <testcase name="checkFireTeamComposition()" classname="Heroww2Test" time="0.018"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

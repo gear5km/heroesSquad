@@ -129,6 +129,14 @@ import java.util.Map;
                 return null;
             });
 
+            post("/deploy/removeFromFireTeam", (request,response)->{
+                Map <String,Object> model=new HashMap<String,Object>();
+                ArrayList<soldier> mySoldiers = soldier.all();
+                fireteam.team1.remove(mySoldiers.get(Integer.parseInt(request.queryParams("soldierId"))));
+                response.redirect("/deploy");
+                return null;
+            });
+
         }
     }
 
